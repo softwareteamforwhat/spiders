@@ -6,7 +6,7 @@ DOWNLOAD_DELAY = 3
 FEED_EXPORT_ENCODING = 'utf-8' 
 # COOKIES_ENABLED = False
 DOWNLOADER_MIDDLEWARES = {
-    'maoyan.middlewares.ProxyDownloaderMiddleware': 100,
+    # 'maoyan.middlewares.ProxyDownloaderMiddleware': 100,
     'maoyan.middlewares.RandomUserAgentMiddleware': 100,
 }
 

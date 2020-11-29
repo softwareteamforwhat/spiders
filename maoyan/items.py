@@ -24,3 +24,15 @@ class MaoyanItem(scrapy.Item):
     actors = scrapy.Field()
     # pictures = scrapy.Field()
     # videos = scrapy.Field()
+
+
+class HallItem(scrapy.Item):
+    # hallId = scrapy.Field()
+    picture = scrapy.Field()
+    name = scrapy.Field()
+    address = scrapy.Field()
+    phone = scrapy.Field()
+    service = scrapy.Field()
+
+class HallIdItem(scrapy.Item):
+    hallId = scrapy.Field()
