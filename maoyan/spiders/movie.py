@@ -7,10 +7,10 @@ import numpy as np
 class MovieSpider(scrapy.Spider):
     name = 'movie'
     allowed_domains = ['maoyan.com']
-    start_urls = ['https://maoyan.com/films/343012']
-    csv_path = 'D:\\1code\\python\\maoyanspider\\maoyan\\test.csv'
+    start_urls = ['https://maoyan.com/films/1282401']
+    csv_path = 'D:\\1code\\python\\maoyanspider\\maoyan\\test2.csv'
     cols = [0]
-    index = 400
+    index = 0
     df = pd.read_csv(csv_path, usecols=cols)
     movies = list(np.array(df.values).flatten('F'))
     # length = len(movies)
@@ -55,7 +55,7 @@ class MovieSpider(scrapy.Spider):
         item['actors'] = actor_list
         yield item
         base = 'https://maoyan.com'
-        for i in range(401, 2010):
+        for i in range(1, 2000):
             yield scrapy.Request(url=base+str(MovieSpider.movies[i]), meta={
                 'dont_redirect': True,
                 'handle_httpstatus_list': [302]
